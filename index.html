@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Activité en préparation</title>
+<style>
+  :root{
+    --ink:#1f2940;
+    --muted:#5e6881;
+    --panel:rgba(255,255,255,.78);
+    --line:rgba(255,255,255,.44);
+    --accent:#5668d9;
+    --accent2:#7bcfd1;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:Inter,ui-rounded,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+  body{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    background:
+      linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px),
+      linear-gradient(135deg,#9fd9ee 0%,#c9c7ea 48%,#f0c1b7 100%);
+    background-size:48px 48px,48px 48px,auto;
+  }
+  .page{
+    width:min(960px,92vw);
+    padding:32px;
+    position:relative;
+  }
+  .card{
+    position:relative;
+    overflow:hidden;
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:64px 54px;
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:34px;
+    background:var(--panel);
+    backdrop-filter:blur(14px);
+    box-shadow:0 18px 50px rgba(48,59,100,.16);
+  }
+  .card::before,.card::after{
+    content:"";
+    position:absolute;
+    border:20px solid rgba(255,255,255,.22);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .card::before{width:220px;height:220px;right:-65px;top:-70px}
+  .card::after{width:150px;height:150px;left:-55px;bottom:-60px}
+  .content{position:relative;z-index:2;max-width:720px}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    margin-bottom:24px;
+    border-radius:999px;
+    background:rgba(86,104,217,.11);
+    border:1px solid rgba(86,104,217,.2);
+    color:#4454ba;
+    font-weight:800;
+    font-size:1rem;
+    letter-spacing:.02em;
+  }
+  .dot{width:10px;height:10px;border-radius:50%;background:#6abfc3;box-shadow:0 0 0 6px rgba(106,191,195,.15)}
+  h1{
+    margin:0 0 18px;
+    font-size:clamp(2.5rem,5vw,4.6rem);
+    line-height:.98;
+    letter-spacing:-.045em;
+  }
+  .lead{
+    margin:0 auto;
+    max-width:650px;
+    font-size:clamp(1.25rem,2vw,1.7rem);
+    line-height:1.45;
+    font-weight:750;
+  }
+  .sub{
+    margin:18px auto 0;
+    max-width:620px;
+    font-size:clamp(1rem,1.35vw,1.17rem);
+    line-height:1.6;
+    color:var(--muted);
+    font-weight:550;
+  }
+  .progress{
+    width:min(420px,80%);
+    height:14px;
+    margin:34px auto 0;
+    padding:3px;
+    border-radius:999px;
+    background:rgba(69,81,119,.10);
+    box-shadow:inset 0 1px 2px rgba(24,35,67,.08);
+  }
+  .progress span{
+    display:block;
+    width:68%;
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+  }
+  .note{
+    margin-top:13px;
+    color:#667088;
+    font-size:.92rem;
+    font-weight:700;
+  }
+  .back{
+    margin-top:30px;
+    min-height:48px;
+    padding:0 22px;
+    border:1px solid rgba(55,68,105,.18);
+    border-radius:14px;
+    background:rgba(255,255,255,.78);
+    color:var(--ink);
+    font:inherit;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 5px 14px rgba(50,60,100,.08);
+  }
+  .back:hover{background:#fff}
+  .back:focus-visible{outline:3px solid rgba(86,104,217,.32);outline-offset:3px}
+  @media (max-width:640px){
+    body{overflow:auto}
+    .page{padding:18px}
+    .card{min-height:430px;padding:44px 22px;border-radius:26px}
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="title">
+      <div class="content">
+        <div class="badge"><span class="dot"></span> Activité en préparation</div>
+        <h1 id="title">Un peu de patience…</h1>
+        <p class="lead">Cette activité n’est pas encore prête.</p>
+        <p class="sub">Je préfère prendre le temps de la terminer correctement avant de vous la proposer. Elle arrivera bientôt&nbsp;!</p>
+        <div class="progress" aria-label="Activité en cours de préparation"><span></span></div>
+        <div class="note">Encore un peu de travail…</div>
+        <button class="back" type="button" onclick="history.length > 1 ? history.back() : window.location.href='./'">← Retour</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
